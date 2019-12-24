@@ -1,0 +1,6 @@
+module Pods_VinidNews {
+  umbrella header "Pods-VinidNews-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HT4-ox-eug">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New York  Time-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="ArticleViewController" customModule="VinidNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7t-KX-czB">
+                                <rect key="frame" x="10" y="54" width="394" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cbF-02-xMB"/>
+                                </constraints>
+                                <state key="normal" title="December 2019">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="NyK-AX-Paa">
+                                <rect key="frame" x="369" y="64" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="6ub-3H-CaV"/>
+                                    <constraint firstAttribute="height" constant="25" id="HJW-QH-Cg9"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXG-5H-b6m">
+                                <rect key="frame" x="16" y="110" width="382" height="610"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EMw-IZ-RXc">
+                                <rect key="frame" x="188.66666666666666" y="396.66666666666669" width="37" height="37"/>
+                                <color key="color" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <constraints>
+                            <constraint firstItem="j7t-KX-czB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="7Cv-Sc-Otl"/>
+                            <constraint firstItem="j7t-KX-czB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AWB-eH-qk4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bXG-5H-b6m" secondAttribute="trailing" constant="16" id="FTE-sk-6qv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bXG-5H-b6m" secondAttribute="bottom" constant="16" id="IGw-ZX-63i"/>
+                            <constraint firstItem="bXG-5H-b6m" firstAttribute="top" secondItem="j7t-KX-czB" secondAttribute="bottom" constant="16" id="K3A-XR-aRt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j7t-KX-czB" secondAttribute="trailing" constant="10" id="ZoV-Ok-RKw"/>
+                            <constraint firstItem="bXG-5H-b6m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cez-CD-KFI"/>
+                            <constraint firstItem="EMw-IZ-RXc" firstAttribute="centerY" secondItem="bXG-5H-b6m" secondAttribute="centerY" id="hzd-vk-4cz"/>
+                            <constraint firstItem="NyK-AX-Paa" firstAttribute="top" secondItem="j7t-KX-czB" secondAttribute="top" constant="10" id="kzk-Np-V59"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NyK-AX-Paa" secondAttribute="trailing" constant="20" id="oLQ-Pl-ohu"/>
+                            <constraint firstItem="EMw-IZ-RXc" firstAttribute="centerX" secondItem="bXG-5H-b6m" secondAttribute="centerX" id="vr6-5C-Oz5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New York  Time" id="2dm-X6-8eK">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="F1Q-Yv-zcx">
+                            <connections>
+                                <action selector="searchButtonWasPressed:" destination="BYZ-38-t0r" id="wNd-F8-pf3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="articleTableViewController" destination="bXG-5H-b6m" id="uUH-L2-iYW"/>
+                        <outlet property="spinerActivity" destination="EMw-IZ-RXc" id="EuN-AJ-2ld"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-474" y="-1017"/>
+        </scene>
+        <!--News DetailVC-->
+        <scene sceneID="xeH-z9-Gce">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Nrf-G8-Ujk" customClass="NewsDetailVC" customModule="VinidNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C9V-R8-vXK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npg-49-qV2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-8A-FkX">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="color" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="npg-49-qV2" firstAttribute="leading" secondItem="94w-bH-7cd" secondAttribute="leading" id="6Vt-1D-bdb"/>
+                            <constraint firstItem="94w-bH-7cd" firstAttribute="bottom" secondItem="npg-49-qV2" secondAttribute="bottom" id="G7a-Gl-Sgg"/>
+                            <constraint firstItem="94w-bH-7cd" firstAttribute="trailing" secondItem="npg-49-qV2" secondAttribute="trailing" id="GKG-6J-rgQ"/>
+                            <constraint firstItem="fb7-8A-FkX" firstAttribute="centerX" secondItem="C9V-R8-vXK" secondAttribute="centerX" id="Ujm-v6-bmb"/>
+                            <constraint firstItem="fb7-8A-FkX" firstAttribute="centerY" secondItem="C9V-R8-vXK" secondAttribute="centerY" id="cdF-aS-lPs"/>
+                            <constraint firstItem="npg-49-qV2" firstAttribute="top" secondItem="94w-bH-7cd" secondAttribute="top" id="dGk-UX-lNW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="94w-bH-7cd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nLK-NA-ZgQ"/>
+                    <connections>
+                        <outlet property="newsPageView" destination="npg-49-qV2" id="vq9-vv-th8"/>
+                        <outlet property="spinnner" destination="fb7-8A-FkX" id="EzY-Qn-52b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qy-ov-P37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539" y="-1030"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7ui-Gn-WvA">
+            <objects>
+                <navigationController storyboardIdentifier="ArticleView" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HT4-ox-eug" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="GnH-5b-epi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GP8-TC-7Yg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="P1W-pk-2gT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cp2-PF-kov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1203" y="-1008"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dropdown" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
