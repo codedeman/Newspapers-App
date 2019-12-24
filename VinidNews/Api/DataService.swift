@@ -18,7 +18,10 @@ class  DataService {
         
         AF.request(url).responseJSON { (reponse) in
             DispatchQueue.global(qos: .background).async {
-                guard let data = reponse.data else {return}
+                guard let data = reponse.data else {
+                    completion([])
+                    return
+                }
                 
                 do{
                     guard let json  = try? JSON(data: data) else {return}
@@ -28,20 +31,19 @@ class  DataService {
                         var newsArray:Array<NewsModel> = []
                         
                         for rec in docs{
-                            
                             let new =  self.parseNews(dic: rec)
-                            
                             newsArray.append(new)
-                            completion(newsArray)
                         }
                         
-//                        print("new  \(newsArray)")
+                        completion(newsArray)
+                    } else {
+                        completion([])
                     }
-                    
                     
                 }catch {
                     
                     print("Error")
+                    completion([])
                 }
                 
             }

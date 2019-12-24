@@ -11,36 +11,38 @@ import RxSwift
 import RxCocoa
 
 protocol ArticleRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    
+    func routeToSearch()
+    func route(toItem item: NewsModel)
+
+
+    
 }
 
 protocol ArticlePresentable: Presentable {
     var listener: ArticlePresentableListener? { get set  }
-//    func announce(winner: PlayerType?, withCompletionHandler handler: @escaping () -> ())
 
-//    func pushData(news:NewsModel,completion: @escaping()->())
-    
-    var searchResult:BehaviorRelay<[NewsModel]>{get}
-//    var searchDefault = PublishRelay<NewsModel>()
+    var resultDefault:BehaviorRelay<[NewsModel]>{get}
 }
 
 protocol ArticleListener: class {
-    
 
+    
 
 }
 
 final class ArticleInteractor: PresentableInteractor<ArticlePresentable>, ArticleInteractable, ArticlePresentableListener {
-    func didTapSearchButton() {
+    func didSelectItem(_ item: NewsModel) {
         
     }
     
     
     
     
+
+    
    
     
-
     weak var router: ArticleRouting?
     weak var listener: ArticleListener?
     
@@ -50,25 +52,22 @@ final class ArticleInteractor: PresentableInteractor<ArticlePresentable>, Articl
     let obseverbel = Observable.from("")
     private var behaviorSubject = BehaviorRelay<String>(value: "")
     
-    let newsViewModel = [NewsModel(thumnail: "nndndj", subtitle: "to day is news day", pubdate: "21-2-1989", title: "21=2", url: "1j2kj2j2m"),NewsModel(thumnail: "nndndj", subtitle: "to day is news day", pubdate: "21-2-1989", title: "21=2", url: "1j2kj2j2m"),NewsModel(thumnail: "nndndj", subtitle: "to day is news day", pubdate: "21-2-1989", title: "21=2", url: "1j2kj2j2m"),NewsModel(thumnail: "nndndj", subtitle: "to day is news day", pubdate: "21-2-1989", title: "21=2", url: "1j2kj2j2m") ]
-    
-    
     
     func getArticle() {
-        
         let url = "https://api.nytimes.com/svc/archive/v1/2019/11.json?api-key=pH4PGY4gblvAcFIMKV8x7MixeFUrf1AR"
 
         DataService.instance.getArtice(url: url) { (article) in
-            self.presenter.searchResult.accept(article)
+            self.presenter.resultDefault.accept(article)
         }
     }
     
-    
-    
-    
    
+     func didTapSearchButton() {
+        router?.routeToSearch()
     
-    
+    }
+        
+ 
     override init(presenter: ArticlePresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
@@ -76,17 +75,13 @@ final class ArticleInteractor: PresentableInteractor<ArticlePresentable>, Articl
         
     }
     
-    
     override func didBecomeActive() {
         super.didBecomeActive()
         
         
         getArticle()
 
-        
-        
-//        presenter.searchResult.accept(getArticle())
-
+    
 
     }
 

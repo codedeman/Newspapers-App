@@ -49,7 +49,6 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     }
     
     private func routerToArticle(){
-        
         let articleItems = articleBuilder.build(withListener: interactor)
         self.articleRouting =  articleItems
         attachChild(articleItems)

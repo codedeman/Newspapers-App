@@ -22,13 +22,7 @@ final class RootViewController: UINavigationController, RootPresentable, RootVie
     }
     
     func present(viewController: ViewControllable) {
-//        present(viewController.uiviewController, animated: true, completion: nil)
-        
-        
             pushViewController(viewController.uiviewController, animated: false)
-//
-        
-    
     }
     
     func dismiss(viewController: ViewControllable) {

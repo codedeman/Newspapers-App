@@ -15,10 +15,8 @@ protocol ArticleDependency: Dependency {
 
 final class ArticleComponent: Component<ArticleDependency> {
     
-    fileprivate var articleViewController:ArticleViewControllable{
     
-        return dependency.articleViewController
-    }
+    let articleController:ArticleViewController! = nil
     
 //    override init(dependency: Dependency) {
 //        super.init(dependency: dependency)
@@ -35,7 +33,7 @@ protocol ArticleBuildable: Buildable {
 }
 
 @available(iOS 13.0, *)
-final class ArticleBuilder: Builder<ArticleDependency>, ArticleBuildable {
+final class ArticleBuilder: Builder<ArticleDependency>, ArticleBuildable{
 
     override init(dependency: ArticleDependency) {
         super.init(dependency: dependency)
@@ -52,16 +50,28 @@ final class ArticleBuilder: Builder<ArticleDependency>, ArticleBuildable {
         let interactor = ArticleInteractor(presenter: articleViewcontroller)
                 let component = ArticleComponent(dependency: dependency)
                 interactor.listener = listener
-        return ArticleRouter(interactor: interactor, viewController: articleViewcontroller)
+        
+        let searchBuilder = SearchBuilder(dependency: component)
+
+        return ArticleRouter(interactor: interactor, viewController: articleViewcontroller, searchBuilder: searchBuilder)
         
         
     
-        
-//        let interactor = ArticleInteractor(presenter: articleViewcontroller)
-//        let component = ArticleComponent(dependency: dependency)
-////        interactor.listener = listener
-//        return ArticleRouter(interactor: interactor, viewController: articleViewcontroller)
     }
 }
+
+extension ArticleComponent:SearchDependency{
+    var searchViewController: SearchViewControllable {
+        return articleController
+    }
+
+}
+
+
+
+
+
+
+
 
 

@@ -40,6 +40,9 @@ class SearchVC: UIViewController {
     
     func blindUI(){
         
+//                self.searchInputTxt.rx.text.asObservable().bind(to: userViewModel.searchInput).addDisposableTo(disposeBag)
+
+        
         
 //        self.searchInputTxt.rx.text.asObservable().bind(to: NewsViewModel.getSearchInput())
         
@@ -47,7 +50,7 @@ class SearchVC: UIViewController {
 //        newsViewModel.getSearchInput.
 //        newsViewModel.getSearchInput().sub
         
-//        self.searchInputTxt.rx.text.throttle(.microseconds(5), scheduler: MainScheduler.instance).distinctUntilChanged().asObservable().bind(to: newsViewModel.getSearchInput())
+//        self.searchInputTxt.rx.text.throttle(.microseconds(5), scheduler: MainScheduler.instance).distinctUntilChanged().asObservable().bind(to: newsViewModel.se())
         
         
 //        (searchInputTxt.rx.text.asObservable() as AnyObject).bind(to: newsViewModel.getBehavior()).
@@ -67,6 +70,7 @@ class SearchVC: UIViewController {
 //        }.dispose()
            
 //        searchInputTxt.rx.text.asObservable().bind(to: newsViewModel.getSearchInput()).disposed(by: disposeBag)
+        
         searchInputTxt.rx.text.subscribe(onNext: { (text) in
                 if text!.isEmpty{
                     self.spinerActivity.stopAnimating()

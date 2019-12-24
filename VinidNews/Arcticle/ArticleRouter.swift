@@ -8,23 +8,36 @@
 
 import RIBs
 
-protocol ArticleInteractable: Interactable,ArticleListener{
+protocol ArticleInteractable: Interactable,SearchListener{
     var router: ArticleRouting? { get set }
     var listener: ArticleListener? { get set }
 }
 
 protocol ArticleViewControllable: ViewControllable {
     
-//    func present(viewController: ViewControllable)
-//    func dismiss(viewController: ViewControllable)
+    func present(viewController: ViewControllable)
+    func dismiss(viewController: ViewControllable)
 }
 
 final class ArticleRouter: ViewableRouter<ArticleInteractable, ArticleViewControllable>, ArticleRouting {
+   
+    
+    
 
-    private let articleBuilder:ArticleBuildable? = nil
-    private var currentChild: ViewableRouting?
-
-
+    private var searchBuilder:SearchBuildable! = nil
+    private var currentChild: ViewableRouting!
+    
+    init(interactor: ArticleInteractable, viewController: ArticleViewControllable,searchBuilder:SearchBuildable) {
+        
+        self.searchBuilder = searchBuilder
+        super.init(interactor: interactor, viewController: viewController)
+        interactor.router  = self
+        
+    }
+        
+        
+    
+    
     override func didLoad() {
         
         super.didLoad()
@@ -33,14 +46,19 @@ final class ArticleRouter: ViewableRouter<ArticleInteractable, ArticleViewContro
     
     }
     
-    private func attachOffArticle(){
-
-        let article = articleBuilder!.build(withListener: interactor)
-        self.currentChild = article
-//        attachChild(article)
-//        viewController.present(viewController: article.)
-
-
+   
+   
+    func routeToSearch() {
+        let router = searchBuilder.build(withListener: interactor)
+              attachChild(router)
+              viewController.present(viewController: router.viewControllable)
     }
+    
+    func route(toItem item: NewsModel) {
+           
+        
+    }
+    
+    
     
 }
