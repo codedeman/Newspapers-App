@@ -8,7 +8,7 @@
 
 import RIBs
 
-protocol ArticleInteractable: Interactable,SearchListener{
+protocol ArticleInteractable: Interactable,SearchListener,DetailListener{
     var router: ArticleRouting? { get set }
     var listener: ArticleListener? { get set }
 }
@@ -17,14 +17,17 @@ protocol ArticleViewControllable: ViewControllable {
     
     func present(viewController: ViewControllable)
     func dismiss(viewController: ViewControllable)
+    func  push(viewController: ViewControllable)
 }
 
+@available(iOS 13.0, *)
 final class ArticleRouter: ViewableRouter<ArticleInteractable, ArticleViewControllable>, ArticleRouting {
    
     
-    
 
     private var searchBuilder:SearchBuildable! = nil
+    
+    private var  detailBuilder:DetailBuilder!
     private var currentChild: ViewableRouting!
     
     init(interactor: ArticleInteractable, viewController: ArticleViewControllable,searchBuilder:SearchBuildable) {
@@ -35,15 +38,8 @@ final class ArticleRouter: ViewableRouter<ArticleInteractable, ArticleViewContro
         
     }
         
-        
-    
-    
     override func didLoad() {
-        
         super.didLoad()
-        
-//        attachOffArticle()
-    
     }
     
    
@@ -55,8 +51,12 @@ final class ArticleRouter: ViewableRouter<ArticleInteractable, ArticleViewContro
     }
     
     func route(toItem item: NewsModel) {
-           
         
+                
+        let router = detailBuilder.build(item: item)
+               attachChild(router)
+               viewController.push(viewController: router.viewControllable)
+            
     }
     
     

@@ -37,7 +37,6 @@ final class SearchBuilder: Builder<SearchDependency>, SearchBuildable {
     func build(withListener listener: SearchListener) -> SearchRouting {
         _ = SearchComponent(dependency: dependency)
         guard  let searchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchView") as? SearchViewController else {fatalError("error")}
-        
         searchViewController.modalPresentationStyle = .fullScreen
         
         let interactor = SearchInteractor(presenter: searchViewController)

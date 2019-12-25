@@ -9,8 +9,7 @@
 import RIBs
 
 protocol RootDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+   
 }
 
 final class RootComponent: Component<RootDependency> {
@@ -50,9 +49,9 @@ final class RootBuilder: Builder<RootDependency>, RootBuildable {
 //                interactor.listener = listener
                 let router = RootRouter(interactor: interactor, viewController: viewController, articleBuilder: articleBuilder)
                 return  router
-            
         
        }
 
 
 }
+

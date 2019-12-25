@@ -10,13 +10,13 @@ import RIBs
 
 protocol ArticleDependency: Dependency {
     
-    var articleViewController:ArticleViewControllable {get}
+//    var articleViewController:ArticleViewControllable {get}
 }
 
 final class ArticleComponent: Component<ArticleDependency> {
     
-    
-    let articleController:ArticleViewController! = nil
+    let articleView:ArticleViewController! = nil
+//    let articleController:ArticleViewController! = nil
     
 //    override init(dependency: Dependency) {
 //        super.init(dependency: dependency)
@@ -60,12 +60,12 @@ final class ArticleBuilder: Builder<ArticleDependency>, ArticleBuildable{
     }
 }
 
-extension ArticleComponent:SearchDependency{
-    var searchViewController: SearchViewControllable {
-        return articleController
-    }
-
-}
+//extension ArticleComponent:SearchDependency{
+//    var searchViewController: SearchViewControllable {
+//        return articleController
+//    }
+//
+//}
 
 
 

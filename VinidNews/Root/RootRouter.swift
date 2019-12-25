@@ -59,11 +59,11 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
  
 }
 
-extension RootViewController:ArticleViewControllable{
-    
-    
-    
-    
-    
-    
-}
+//extension RootViewController:ArticleViewControllable{
+//    
+//    
+//    
+//    
+//    
+//    
+//}

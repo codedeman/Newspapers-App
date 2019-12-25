@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="-113.04347826086958" y="-1383.4239130434785"/>
         </scene>
-        <!--News DetailVC-->
+        <!--Detail View Controller-->
         <scene sceneID="xeH-z9-Gce">
             <objects>
-                <viewController storyboardIdentifier="NewsDetailVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Nrf-G8-Ujk" customClass="NewsDetailVC" customModule="VinidNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsDetailVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Nrf-G8-Ujk" customClass="DetailViewController" customModule="VinidNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C9V-R8-vXK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

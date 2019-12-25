@@ -15,9 +15,9 @@ protocol RootDependencyArticle:Dependency {
 
 extension RootComponent:ArticleDependency
 {
-    var articleViewController: ArticleViewControllable {
-        return rootViewController
-    }
+//    var articleViewController: ArticleViewControllable {
+//        return rootViewController
+//    }
     
 //    var articleViewController: ArticleViewControllable {
 //        return rootViewController

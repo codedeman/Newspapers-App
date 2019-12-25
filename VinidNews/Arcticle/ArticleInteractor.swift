@@ -32,14 +32,6 @@ protocol ArticleListener: class {
 }
 
 final class ArticleInteractor: PresentableInteractor<ArticlePresentable>, ArticleInteractable, ArticlePresentableListener {
-    func didSelectItem(_ item: NewsModel) {
-        
-    }
-    
-    
-    
-    
-
     
    
     
@@ -66,6 +58,12 @@ final class ArticleInteractor: PresentableInteractor<ArticlePresentable>, Articl
         router?.routeToSearch()
     
     }
+    
+   func didSelectItem(_ item: NewsModel?) {
+    
+    router?.route(toItem: item!)
+    }
+    
         
  
     override init(presenter: ArticlePresentable) {

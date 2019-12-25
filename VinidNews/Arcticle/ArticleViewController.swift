@@ -14,11 +14,13 @@ import UIKit
 import SnapKit
 protocol ArticlePresentableListener: ArticleListener {
     func didTapSearchButton()
-    func didSelectItem(_ item: NewsModel)
+    func didSelectItem(_ item: NewsModel?)
 
 }
 
 final class ArticleViewController: UIViewController,ArticlePresentable, ArticleViewControllable {
+    
+    
     
 
     let resultDefault = BehaviorRelay<[NewsModel]>(value: [])
@@ -30,7 +32,6 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.white
         articleTableViewController?.register(UINib(nibName: "NewFeed2Cell", bundle: nil), forCellReuseIdentifier: "NewFeed2Cell")
         blindUI()
@@ -49,26 +50,16 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
             DispatchQueue.main.async {
                 cell.configureCell(data: new)
                 self.spinerActivity.stopAnimating()
-                
             }
         }.disposed(by: disposeBag)
         
         
         articleTableViewController.rx.modelSelected(NewsModel.self).asDriver().drive(onNext: { (item) in
             
-                self.listener?.didSelectItem(item)
-            }).disposed(by: disposeBag)
+            self.listener?.didSelectItem(item)
+        }).disposed(by: disposeBag)
         
-        /*
-         
-         tableView.rx.modelSelected(Item.self)
-                    .asDriver()
-                    .drive(onNext: { item in
-                        self.listener?.didSelectItem(item)
-                    })
-                    .disposed(by: disposeBag)
-         */
-        
+       
     }
     
     
@@ -85,6 +76,10 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
     
     func dismiss(viewController: ViewControllable) {
 //        dismiss(viewController: viewController.uiviewController,ani)
+    }
+    
+    func push(viewController: ViewControllable) {
+        navigationController?.pushViewController(viewController.uiviewController, animated: false)
     }
     
     
