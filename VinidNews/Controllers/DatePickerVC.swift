@@ -68,8 +68,6 @@ class DatePickerVC: UIViewController {
         if let day = components.day, let _ = components.month, let _ = components.year {
                           selectedButton.isHidden = false
                     
-                    print("day \(day)")
-                          
         }
         
 

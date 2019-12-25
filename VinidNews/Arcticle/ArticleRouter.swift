@@ -8,7 +8,7 @@
 
 import RIBs
 
-protocol ArticleInteractable: Interactable,SearchListener,DetailListener{
+protocol ArticleInteractable: Interactable,SearchListener,DetailListener,DatePickerListener{
     var router: ArticleRouting? { get set }
     var listener: ArticleListener? { get set }
 }
@@ -22,18 +22,36 @@ protocol ArticleViewControllable: ViewControllable {
 
 @available(iOS 13.0, *)
 final class ArticleRouter: ViewableRouter<ArticleInteractable, ArticleViewControllable>, ArticleRouting {
-   
+    func routeToDatePicker() {
+        let dateRouter = dateBuilder.build(withListener: interactor)
+        attachChild(dateRouter)
+        viewController.present(viewController: dateRouter.viewControllable)
+    }
+    
+    func route(url: URL) {
+        let router = detailBuilder.build(item: url)
+        attachChild(router)
+        viewController.push(viewController: router.viewControllable)
+            
+    }
     
 
-    private var searchBuilder:SearchBuildable! = nil
+    private let  searchBuilder:SearchBuildable
     
-    private var  detailBuilder:DetailBuilder!
+    private let  detailBuilder:DetailBuilder
+    
     private var currentChild: ViewableRouting!
     
-    init(interactor: ArticleInteractable, viewController: ArticleViewControllable,searchBuilder:SearchBuildable) {
+    private let dateBuilder:DatePickerBuilder
+    
+    init(interactor: ArticleInteractable, viewController: ArticleViewControllable,searchBuilder:SearchBuildable,detailBuilder:DetailBuilder,dateBuilder:DatePickerBuilder) {
         
         self.searchBuilder = searchBuilder
+        self.detailBuilder = detailBuilder
+        self.dateBuilder = dateBuilder
+        
         super.init(interactor: interactor, viewController: viewController)
+        
         interactor.router  = self
         
     }
@@ -50,14 +68,8 @@ final class ArticleRouter: ViewableRouter<ArticleInteractable, ArticleViewContro
               viewController.present(viewController: router.viewControllable)
     }
     
-    func route(toItem item: NewsModel) {
-        
-                
-        let router = detailBuilder.build(item: item)
-               attachChild(router)
-               viewController.push(viewController: router.viewControllable)
-            
-    }
+
+  
     
     
     

@@ -9,6 +9,7 @@
 import RIBs
 import RxSwift
 import UIKit
+import WebKit
 
 protocol DetailPresentableListener: class {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -17,7 +18,29 @@ protocol DetailPresentableListener: class {
 }
 
 final class DetailViewController: UIViewController, DetailPresentable, DetailViewControllable {
-    var item: NewsModel?
+    var item: URL!
 
     weak var listener: DetailPresentableListener?
+    @IBOutlet weak var newsPageView: WKWebView!
+    @IBOutlet weak var spinnnerActivity: UIActivityIndicatorView!
+    
+    override func viewDidLoad() {
+        
+            DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+                self.spinnnerActivity.stopAnimating()
+                    self.loadNewsPage(url: self.item)
+            })
+        
+    }
+    
+    func loadNewsPage(url:URL)  {
+           do{
+               let requestURL = try URLRequest(url: url, method: .get)
+                     newsPageView.load(requestURL)
+               
+           }catch{
+               debugPrint("errorr")
+           }
+         
+       }
 }

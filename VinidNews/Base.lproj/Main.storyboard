@@ -67,6 +67,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="articleTableViewController" destination="bXG-5H-b6m" id="uUH-L2-iYW"/>
+                        <outlet property="dateSelectButton" destination="j7t-KX-czB" id="yc4-pQ-lxN"/>
                         <outlet property="searchButton" destination="F1Q-Yv-zcx" id="TY8-SK-gSD"/>
                         <outlet property="spinerActivity" destination="EMw-IZ-RXc" id="EuN-AJ-2ld"/>
                     </connections>
@@ -137,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ob5-DR-VeN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-113.04347826086958" y="-1383.4239130434785"/>
+            <point key="canvasLocation" x="190" y="-1341"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="xeH-z9-Gce">
@@ -173,8 +174,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="nLK-NA-ZgQ"/>
                     <connections>
-                        <outlet property="newsPageView" destination="npg-49-qV2" id="vq9-vv-th8"/>
-                        <outlet property="spinnner" destination="fb7-8A-FkX" id="EzY-Qn-52b"/>
+                        <outlet property="newsPageView" destination="npg-49-qV2" id="coB-I9-EXm"/>
+                        <outlet property="spinnnerActivity" destination="fb7-8A-FkX" id="1fA-XI-dtK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qy-ov-P37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

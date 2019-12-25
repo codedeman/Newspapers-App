@@ -14,15 +14,20 @@ import UIKit
 import SnapKit
 protocol ArticlePresentableListener: ArticleListener {
     func didTapSearchButton()
-    func didSelectItem(_ item: NewsModel?)
+    func didSelectItem(url:URL)
+    func didTapDatePicker()
+    func getDate(date:String)
+    
+    
 
 }
 
 final class ArticleViewController: UIViewController,ArticlePresentable, ArticleViewControllable {
     
+    var date:String!
     
+    @IBOutlet weak var dateSelectButton: UIButton!
     
-
     let resultDefault = BehaviorRelay<[NewsModel]>(value: [])
     @IBOutlet weak var searchButton: UIBarButtonItem!
     private let disposeBag = DisposeBag()
@@ -32,6 +37,7 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.white
         articleTableViewController?.register(UINib(nibName: "NewFeed2Cell", bundle: nil), forCellReuseIdentifier: "NewFeed2Cell")
         blindUI()
@@ -40,6 +46,8 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+//        listener?.getDate(date: date)
         
     }
     
@@ -56,8 +64,15 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
         
         articleTableViewController.rx.modelSelected(NewsModel.self).asDriver().drive(onNext: { (item) in
             
-            self.listener?.didSelectItem(item)
+            guard let url = URL(string: item.url) else {return}
+            self.listener?.didSelectItem(url: url)
         }).disposed(by: disposeBag)
+        
+        dateSelectButton.rx.tap.subscribe(onNext: {  [weak self] in
+            
+            self!.listener?.didTapDatePicker()
+            
+            }, onError: nil, onCompleted: nil).disposed(by: disposeBag)
         
        
     }

@@ -50,6 +50,13 @@
 		8DCA57F623B2592900F2F789 /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA57F223B2592900F2F789 /* DetailBuilder.swift */; };
 		8DCA57F723B2592900F2F789 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA57F323B2592900F2F789 /* DetailInteractor.swift */; };
 		8DCA57FB23B2661D00F2F789 /* ArticleComponent+DetailDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA57FA23B2661D00F2F789 /* ArticleComponent+DetailDependency.swift */; };
+		8DCA57FD23B30BAB00F2F789 /* ArticleComponent+DetailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA57FC23B30BAB00F2F789 /* ArticleComponent+DetailComponent.swift */; };
+		8DCA580623B3107400F2F789 /* DatePickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA580123B3107400F2F789 /* DatePickerRouter.swift */; };
+		8DCA580723B3107400F2F789 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA580223B3107400F2F789 /* DatePickerViewController.swift */; };
+		8DCA580823B3107400F2F789 /* DatePickerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA580323B3107400F2F789 /* DatePickerBuilder.swift */; };
+		8DCA580923B3107400F2F789 /* DatePickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA580423B3107400F2F789 /* DatePickerInteractor.swift */; };
+		8DCA580A23B3107400F2F789 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA580523B3107400F2F789 /* DatePickerViewController.xib */; };
+		8DCA580C23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA580B23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift */; };
 		8DE893BA23AFCCA200AAF5A1 /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE893B623AFCCA200AAF5A1 /* NewsRouter.swift */; };
 		8DE893BB23AFCCA200AAF5A1 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE893B723AFCCA200AAF5A1 /* NewsViewController.swift */; };
 		8DE893BC23AFCCA200AAF5A1 /* NewsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE893B823AFCCA200AAF5A1 /* NewsBuilder.swift */; };
@@ -129,6 +136,13 @@
 		8DCA57F223B2592900F2F789 /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
 		8DCA57F323B2592900F2F789 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		8DCA57FA23B2661D00F2F789 /* ArticleComponent+DetailDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleComponent+DetailDependency.swift"; sourceTree = "<group>"; };
+		8DCA57FC23B30BAB00F2F789 /* ArticleComponent+DetailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleComponent+DetailComponent.swift"; sourceTree = "<group>"; };
+		8DCA580123B3107400F2F789 /* DatePickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerRouter.swift; sourceTree = "<group>"; };
+		8DCA580223B3107400F2F789 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		8DCA580323B3107400F2F789 /* DatePickerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerBuilder.swift; sourceTree = "<group>"; };
+		8DCA580423B3107400F2F789 /* DatePickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerInteractor.swift; sourceTree = "<group>"; };
+		8DCA580523B3107400F2F789 /* DatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		8DCA580B23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleComponent+DatePickerDependency.swift"; sourceTree = "<group>"; };
 		8DE893B623AFCCA200AAF5A1 /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
 		8DE893B723AFCCA200AAF5A1 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		8DE893B823AFCCA200AAF5A1 /* NewsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBuilder.swift; sourceTree = "<group>"; };
@@ -223,6 +237,7 @@
 		18968AEF238BCA1E008B5151 /* VinidNews */ = {
 			isa = PBXGroup;
 			children = (
+				8DCA580023B30FD700F2F789 /* DatePicker */,
 				8DCA57ED23B2586F00F2F789 /* Detail */,
 				8DAEF81F23B1BA2D002D3698 /* Search */,
 				8DE893C723B089E200AAF5A1 /* AppStart */,
@@ -320,6 +335,8 @@
 				8D2C1DCE23AC950D005F67A3 /* ArticleBuilder.swift */,
 				8D2C1DCF23AC950D005F67A3 /* ArticleInteractor.swift */,
 				8DCA57FA23B2661D00F2F789 /* ArticleComponent+DetailDependency.swift */,
+				8DCA57FC23B30BAB00F2F789 /* ArticleComponent+DetailComponent.swift */,
+				8DCA580B23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift */,
 			);
 			path = Arcticle;
 			sourceTree = "<group>";
@@ -356,6 +373,18 @@
 				8DCA57F323B2592900F2F789 /* DetailInteractor.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		8DCA580023B30FD700F2F789 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				8DCA580123B3107400F2F789 /* DatePickerRouter.swift */,
+				8DCA580223B3107400F2F789 /* DatePickerViewController.swift */,
+				8DCA580323B3107400F2F789 /* DatePickerBuilder.swift */,
+				8DCA580423B3107400F2F789 /* DatePickerInteractor.swift */,
+				8DCA580523B3107400F2F789 /* DatePickerViewController.xib */,
+			);
+			path = DatePicker;
 			sourceTree = "<group>";
 		};
 		8DE893B523AFCC0700AAF5A1 /* NewsFeed */ = {
@@ -499,6 +528,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCA580A23B3107400F2F789 /* DatePickerViewController.xib in Resources */,
 				18968AFD238BCA21008B5151 /* LaunchScreen.storyboard in Resources */,
 				18C9CAD52393DC1D00AED9BE /* OfflineViewController.xib in Resources */,
 				18256783238F884500BABC47 /* NewFeed2Cell.xib in Resources */,
@@ -559,13 +589,16 @@
 				18C9CAD42393DC1D00AED9BE /* OfflineViewController.swift in Sources */,
 				8D2C1DDC23ADB3AA005F67A3 /* RootInteractor.swift in Sources */,
 				8DAEF82623B1BA9C002D3698 /* SearchBuilder.swift in Sources */,
+				8DCA580723B3107400F2F789 /* DatePickerViewController.swift in Sources */,
 				8DE893C423B07AFA00AAF5A1 /* Dependency.swift in Sources */,
 				8DCA57F423B2592900F2F789 /* DetailRouter.swift in Sources */,
 				8DE893BC23AFCCA200AAF5A1 /* NewsBuilder.swift in Sources */,
+				8DCA580923B3107400F2F789 /* DatePickerInteractor.swift in Sources */,
 				8D2C1DD923ADB3AA005F67A3 /* RootRouter.swift in Sources */,
 				18256782238F884500BABC47 /* NewFeedCell.swift in Sources */,
 				18E9227A238C18330007956D /* HomeVC.swift in Sources */,
 				8DE893BF23AFCDF400AAF5A1 /* NewsStream.swift in Sources */,
+				8DCA580C23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift in Sources */,
 				8DE893C623B07C2A00AAF5A1 /* DataService.swift in Sources */,
 				18C9CAD72393F1C600AED9BE /* CheckConnection.swift in Sources */,
 				8DE893BA23AFCCA200AAF5A1 /* NewsRouter.swift in Sources */,
@@ -574,6 +607,7 @@
 				18968AF1238BCA1E008B5151 /* AppDelegate.swift in Sources */,
 				8DE893C923B08A0400AAF5A1 /* AppComponent.swift in Sources */,
 				8DE893C223B06CAD00AAF5A1 /* RootComponent+Article.swift in Sources */,
+				8DCA580823B3107400F2F789 /* DatePickerBuilder.swift in Sources */,
 				8D2C1DDB23ADB3AA005F67A3 /* RootBuilder.swift in Sources */,
 				18E9227E238C2DEE0007956D /* NewsViewModel.swift in Sources */,
 				8D2C1DD023AC950D005F67A3 /* ArticleRouter.swift in Sources */,
@@ -581,7 +615,9 @@
 				8DAEF82523B1BA9C002D3698 /* SearchViewController.swift in Sources */,
 				8DCA57F623B2592900F2F789 /* DetailBuilder.swift in Sources */,
 				8D2C1DD123AC950D005F67A3 /* ArticleViewController.swift in Sources */,
+				8DCA580623B3107400F2F789 /* DatePickerRouter.swift in Sources */,
 				8DAEF81E23B1200D002D3698 /* NavigationBasedLaunchRouter.swift in Sources */,
+				8DCA57FD23B30BAB00F2F789 /* ArticleComponent+DetailComponent.swift in Sources */,
 				8DE893BB23AFCCA200AAF5A1 /* NewsViewController.swift in Sources */,
 				8DE893BD23AFCCA200AAF5A1 /* NewsInteractor.swift in Sources */,
 				8DAEF82423B1BA9C002D3698 /* SearchRouter.swift in Sources */,

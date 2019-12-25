@@ -10,34 +10,29 @@ import RIBs
 import RxCocoa
 import RxSwift
 
-protocol NewsStream :class {
-    var news:Observable<NewsModel> {get}
+
+
+struct News:Codable {
+    
+    public let thumnail:String!
+      public let subtitle:String!
+      public let pubdate:String
+      public let title:String
+      public let url:String
+    
 }
-protocol MutableItemsStream:NewsStream {
-       func fetch(page: Int?, perPage: Int?, query: String?)
+
+struct Multimedia:Codable {
+    
+    let url:String
 }
 
 
-//class NewsStreamImpl: MutableItemsStream {
-//    func fetch(page: Int?, perPage: Int?, query: String?) {
-//        <#code#>
-//    }
-//    
-//    var news: Observable<NewsModel>
-//    
-//    func fetch(page: Int?, perPage: Int?, query: String?) {
-//        <#code#>
-//    }
-//
-//
-//    private let _items = BehaviorRelay<NewsModel>(value: [])
-//
-//
-//
-//    var news: Observable<NewsModel>
-//
-//
-//
-//
-//}
 
+struct SearchNews:Codable {
+    
+    let status:String
+    let copyright:String
+    let docs:[News]
+
+}

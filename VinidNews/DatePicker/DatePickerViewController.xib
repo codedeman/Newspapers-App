@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController">
+            <connections>
+                <outlet property="dateContentView" destination="xmC-JR-G3s" id="dyI-Kc-xB8"/>
+                <outlet property="datePickerView" destination="XbJ-8o-Ko6" id="5aN-Bw-g2i"/>
+                <outlet property="doneButton" destination="Md2-RR-UMQ" id="0SV-tW-lpt"/>
+                <outlet property="view" destination="iN0-l3-epB" id="jYO-eb-xeE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmC-JR-G3s">
+                    <rect key="frame" x="10" y="100" width="355" height="200"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="XbJ-8o-Ko6">
+                            <rect key="frame" x="5" y="0.0" width="345" height="216"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hi" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </datePicker>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Md2-RR-UMQ">
+                            <rect key="frame" x="10" y="186" width="335" height="30"/>
+                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Ok ">
+                                <color key="titleColor" red="0.92549019610000005" green="0.92941176469999998" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="XbJ-8o-Ko6" secondAttribute="trailing" constant="5" id="26q-zH-4nN"/>
+                        <constraint firstItem="Md2-RR-UMQ" firstAttribute="leading" secondItem="xmC-JR-G3s" secondAttribute="leading" constant="10" id="EbU-e9-ziz"/>
+                        <constraint firstAttribute="trailing" secondItem="Md2-RR-UMQ" secondAttribute="trailing" constant="10" id="LAb-jj-RtE"/>
+                        <constraint firstItem="Md2-RR-UMQ" firstAttribute="bottom" secondItem="XbJ-8o-Ko6" secondAttribute="bottom" id="ce0-eY-JDi"/>
+                        <constraint firstItem="XbJ-8o-Ko6" firstAttribute="top" secondItem="xmC-JR-G3s" secondAttribute="top" id="n7G-kP-2IU"/>
+                        <constraint firstItem="XbJ-8o-Ko6" firstAttribute="leading" secondItem="xmC-JR-G3s" secondAttribute="leading" constant="5" id="pDj-6r-R65"/>
+                        <constraint firstAttribute="height" constant="200" id="xKK-tn-jGp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="xmC-JR-G3s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="SgN-rc-y4E"/>
+                <constraint firstAttribute="trailing" secondItem="xmC-JR-G3s" secondAttribute="trailing" constant="10" id="jrP-86-zS4"/>
+                <constraint firstItem="xmC-JR-G3s" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="xwU-lg-mOa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="136.80000000000001" y="121.88905547226388"/>
+        </view>
+    </objects>
+</document>

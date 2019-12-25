@@ -23,6 +23,8 @@ let HEADER = [
 ]
 
 
+let exmapler = "https://api.nytimes.com/svc/archive/v1/2019/11.json?api-key=pH4PGY4gblvAcFIMKV8x7MixeFUrf1AR"
+
 
 typealias NewsResponseCompletion = (NewsModel?) -> Void
 

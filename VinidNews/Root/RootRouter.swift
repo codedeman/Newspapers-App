@@ -49,7 +49,7 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     }
     
     private func routerToArticle(){
-        let articleItems = articleBuilder.build(withListener: interactor)
+        let articleItems = articleBuilder.build(withListener: interactor, date: "")
         self.articleRouting =  articleItems
         attachChild(articleItems)
          let articleVC =  articleItems.viewControllable
@@ -59,11 +59,4 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
  
 }
 
-//extension RootViewController:ArticleViewControllable{
-//    
-//    
-//    
-//    
-//    
-//    
-//}
+

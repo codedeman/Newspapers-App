@@ -13,7 +13,8 @@ import RxCocoa
 protocol ArticleRouting: ViewableRouting {
     
     func routeToSearch()
-    func route(toItem item: NewsModel)
+    func route(url:URL)
+    func routeToDatePicker()
 
 
     
@@ -32,6 +33,30 @@ protocol ArticleListener: class {
 }
 
 final class ArticleInteractor: PresentableInteractor<ArticlePresentable>, ArticleInteractable, ArticlePresentableListener {
+    func didSelectDate(date: String) {
+        let url = BASE_URL+"\(date)"+TOKEN
+        
+        DataService.instance.getArtice(url: url) { (article) in
+            self.presenter.resultDefault.accept(article)
+        }
+
+        
+    }
+    
+    func getDate(date: String) {
+        print("date ssss \(date)")
+    }
+    
+    func didTapDatePicker() {
+        router?.routeToDatePicker()
+    }
+    
+    func didSelectItem(url: URL) {
+        
+        router?.route(url: url)
+    }
+    
+    
     
    
     
@@ -59,10 +84,10 @@ final class ArticleInteractor: PresentableInteractor<ArticlePresentable>, Articl
     
     }
     
-   func didSelectItem(_ item: NewsModel?) {
-    
-    router?.route(toItem: item!)
-    }
+//   func didSelectItem(_ item: NewsModel?) {
+//
+//    router?.route(toItem: item!)
+//    }
     
         
  

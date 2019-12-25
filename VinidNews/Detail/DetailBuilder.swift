@@ -21,7 +21,7 @@ final class DetailComponent: Component<DetailDependency> {
 // MARK: - Builder
 
 protocol DetailBuildable: Buildable {
-    func build(item: NewsModel!) -> DetailRouting
+    func build(item: URL) -> DetailRouting
 }
 
 @available(iOS 13.0, *)
@@ -35,12 +35,12 @@ final class DetailBuilder: Builder<DetailDependency>, DetailBuildable {
         super.init(dependency: dependency)
     }
     
-    func build(item: NewsModel!) -> DetailRouting {
+    func build(item: URL) -> DetailRouting {
            let storyboard = UIStoryboard(name: "Main", bundle: nil)
                    guard let viewcontroller =  storyboard.instantiateViewController(identifier: "NewsDetailVC") as?  DetailViewController else {fatalError("error")}
            viewcontroller.item = item
            let interactor = DetailInteractor(presenter: viewcontroller)
-        interactor.listener = self as! DetailListener
+//        interactor.listener = self as! DetailListener
            
            return DetailRouter(interactor: interactor, viewController: viewcontroller)
            

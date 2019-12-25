@@ -55,70 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8FBEC80B-E282-4506-A0C9-443B90FC6910"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VinidNews/Search/SearchInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "search(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "27C5FE3E-58F0-4C97-B5E6-8854BD3F3EB6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VinidNews/Search/SearchInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "search(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "27C5FE3E-58F0-4C97-B5E6-8854BD3F3EB6 - 68247cb5af284dce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VinidNews.SearchInteractor.search(with: Swift.String) -&gt; ()"
-                  moduleName = "VinidNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kienpt6/Downloads/Newspapers-App-master/VinidNews/Search/SearchInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "1088">
-               </Location>
-               <Location
-                  uuid = "27C5FE3E-58F0-4C97-B5E6-8854BD3F3EB6 - 44f13eb96304d289"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;VinidNews.NewsModel&gt;) -&gt; () in VinidNews.SearchInteractor.search(with: Swift.String) -&gt; ()"
-                  moduleName = "VinidNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kienpt6/Downloads/Newspapers-App-master/VinidNews/Search/SearchInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "34">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "05C21478-C603-4480-A875-8F808D300352"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -126,25 +62,57 @@
             filePath = "VinidNews/Arcticle/ArticleInteractor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "didSelectItem(_:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "ArticleInteractor"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E80B8536-E681-4FBB-84EB-EB976668095F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VinidNews/DatePicker/DatePickerRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "cleanupViews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "454CAC7A-FA1E-4DF3-9D72-739031277A4A"
+            uuid = "1B5396D5-4124-4DF6-A53A-3C3636136865"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VinidNews/Arcticle/ArticleRouter.swift"
+            filePath = "VinidNews/DatePicker/DatePickerRouter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "route(toItem:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "routerToArticle(date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBB9DFE3-0A06-4CD2-BEDC-481A3511DDC5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VinidNews/Arcticle/ArticleBuilder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "build(withListener:date:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
