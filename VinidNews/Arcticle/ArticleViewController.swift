@@ -40,6 +40,7 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
         
         view.backgroundColor = UIColor.white
         articleTableViewController?.register(UINib(nibName: "NewFeed2Cell", bundle: nil), forCellReuseIdentifier: "NewFeed2Cell")
+
         blindUI()
     }
     
@@ -47,7 +48,14 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        listener?.getDate(date: date)
+        
+    }
+    
+    private func initTableView(){
+        
+//        articleTableViewController?.register(UINib(nibName: "NewFeed2Cell", bundle: nil), forCellReuseIdentifier: "NewFeed2Cell")
+        
+        
         
     }
     
@@ -90,7 +98,8 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
     }
     
     func dismiss(viewController: ViewControllable) {
-//        dismiss(viewController: viewController.uiviewController,ani)
+        
+        dismiss(animated: false, completion: nil)
     }
     
     func push(viewController: ViewControllable) {

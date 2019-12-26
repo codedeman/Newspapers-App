@@ -33,6 +33,8 @@ protocol ArticleListener: class {
 }
 
 final class ArticleInteractor: PresentableInteractor<ArticlePresentable>, ArticleInteractable, ArticlePresentableListener {
+   
+    
     func didSelectDate(date: String) {
         let url = BASE_URL+"\(date)"+TOKEN
         

@@ -1,8 +1,13 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
+  - Differentiator (3.1.0)
   - RIBs (0.9.1):
     - RxSwift (~> 4.0)
   - RxCocoa (4.0.0):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.5.0)
   - SnapKit (5.0.1)
@@ -13,6 +18,7 @@ DEPENDENCIES:
   - RIBs (~> 0.9)
   - RxCocoa
   - RxCocoa (~> 4)
+  - RxDataSources
   - RxSwift (~> 4)
   - SnapKit
   - SwiftyJSON
@@ -20,20 +26,24 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Differentiator
     - RIBs
     - RxCocoa
+    - RxDataSources
     - RxSwift
     - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   RIBs: 879184fbca567425c488d6b3d14a9c5abfbf9d47
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 30452eed3186ece41b7ddb7536dd4d7e24a6a9a4
+PODFILE CHECKSUM: fdf5e8c5e215eeeb5c2b4b501115464057d5d7ad
 
 COCOAPODS: 1.8.4

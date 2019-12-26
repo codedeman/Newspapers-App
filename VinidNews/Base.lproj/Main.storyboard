@@ -111,11 +111,6 @@
                                 <rect key="frame" x="0.0" y="100" width="414" height="636"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7Oa-zg-wuS">
-                                <rect key="frame" x="189" y="375" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -133,7 +128,6 @@
                         <outlet property="cancelButton" destination="IWU-ER-XN0" id="vuP-4A-YCT"/>
                         <outlet property="searchInputTxt" destination="uXl-C4-q38" id="fPK-Lm-iDi"/>
                         <outlet property="searchResultTable" destination="V0n-gx-qfO" id="Eph-NW-o65"/>
-                        <outlet property="spinerActivity" destination="7Oa-zg-wuS" id="VS1-La-7L3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ob5-DR-VeN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

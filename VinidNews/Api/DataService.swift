@@ -22,7 +22,6 @@ class  DataService {
                     completion([])
                     return
                 }
-                
                 do{
                     guard let json  = try? JSON(data: data) else {return}
                     
@@ -41,17 +40,15 @@ class  DataService {
                     }
                     
                 }catch {
-                    
-                    print("Error")
                     completion([])
                 }
-                
             }
             
         }
         
     }
     
+
     
     // parse json manually
        func parseNews(dic:JSON)->NewsModel{

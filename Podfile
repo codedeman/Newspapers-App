@@ -10,6 +10,8 @@ target 'VinidNews' do
   pod 'RxCocoa', '~> 4'
   pod 'SwiftyJSON'
   pod 'SnapKit'
+  pod 'RxDataSources'
+
 
 
 end

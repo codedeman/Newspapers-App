@@ -14,8 +14,11 @@ protocol SearchInteractable: Interactable {
 }
 
 protocol SearchViewControllable: ViewControllable {
-    // TODO: Declare methods the router invokes to manipulate the view hierarchy.
+    
+    
 }
+
+
 
 final class SearchRouter: ViewableRouter<SearchInteractable, SearchViewControllable>, SearchRouting {
 
