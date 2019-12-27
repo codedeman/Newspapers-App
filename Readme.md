@@ -28,6 +28,12 @@ The NewYorkTimes News Application
 
 <br>
 
+## Architecture 
+<br>
+
+Uber Ribs 
+<br>
+
 
 **Home**
 <br>
@@ -50,6 +56,8 @@ The NewYorkTimes News Application
 <br>
 <img src="https://github.com/codedeman/VinidNews/blob/master/images/cf9b635a9b43621d3b52.jpg"  width=40% />
 <br>
+
+
 
 ## IOS TEAM
 - Developer Kien pham 
