@@ -15,16 +15,26 @@ protocol SearchInteractable: Interactable {
 
 protocol SearchViewControllable: ViewControllable {
     
-    
+
 }
 
 
 
 final class SearchRouter: ViewableRouter<SearchInteractable, SearchViewControllable>, SearchRouting {
+    private var currentChild: ViewableRouting?
+    private var viewControllers:SearchViewControllable
+    private let articleBuilder:ArticleBuildable
+    private let searchBuilder:SearchBuildable
+    
+    
+    
 
-    // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: SearchInteractable, viewController: SearchViewControllable) {
+     init(interactor: SearchInteractable, viewController: SearchViewControllable,articleBuilder:ArticleBuildable,searchBuilder:SearchBuildable) {
+        self.viewControllers = viewController
+        self.articleBuilder = articleBuilder
+        self.searchBuilder = searchBuilder
         super.init(interactor: interactor, viewController: viewController)
+        
         interactor.router = self
     }
 }

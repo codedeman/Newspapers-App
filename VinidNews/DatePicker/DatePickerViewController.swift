@@ -37,9 +37,6 @@ final class DatePickerViewController: UIViewController, DatePickerPresentable, D
     @IBOutlet weak var datePickerView: UIDatePicker!
     var disposeBag = DisposeBag()
 
-    
-    
-    
     override func viewDidLoad() {
         blindingDoneButton()
         doneButton.isHidden = true
@@ -67,9 +64,7 @@ final class DatePickerViewController: UIViewController, DatePickerPresentable, D
     
     
     @objc func dateChanged(_ sender:UIDatePicker){
-        
         let components = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
-                
         if let day = components.day, let _ = components.month, let _ = components.year {
             print(day)
             doneButton.isHidden = false
@@ -83,13 +78,9 @@ final class DatePickerViewController: UIViewController, DatePickerPresentable, D
         doneButton.rx.tap.subscribe(onNext: { [weak self] in
             
             let date = self!.datePickerView.date
-            
             let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
-            
             let dateString = "\(components.year!)/" + "\(components.month!)"
-            
             self?.listener?.didSelectDate(date: dateString)
-            
             self!.dismiss(animated: false, completion: nil)
             
             }, onError: nil, onCompleted: nil).disposed(by: disposeBag)

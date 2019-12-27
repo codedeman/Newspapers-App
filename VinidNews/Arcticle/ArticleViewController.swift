@@ -16,13 +16,11 @@ protocol ArticlePresentableListener: ArticleListener {
     func didTapSearchButton()
     func didSelectItem(url:URL)
     func didTapDatePicker()
-    func getDate(date:String)
-    
-    
-
 }
 
 final class ArticleViewController: UIViewController,ArticlePresentable, ArticleViewControllable {
+        
+   
     
     var date:String!
     
@@ -37,25 +35,25 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.white
         articleTableViewController?.register(UINib(nibName: "NewFeed2Cell", bundle: nil), forCellReuseIdentifier: "NewFeed2Cell")
-
         blindUI()
+        
+
+
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-    }
-    
-    private func initTableView(){
-        
-//        articleTableViewController?.register(UINib(nibName: "NewFeed2Cell", bundle: nil), forCellReuseIdentifier: "NewFeed2Cell")
-        
-        
+        if CheckInternet.connectInternet(){
+            
+        }else{
+            
+            simpleAlert(title: "No Connection Found ", msg: "Please check your network connection")
+            
+            
+        }
         
     }
     
@@ -81,15 +79,12 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
             self!.listener?.didTapDatePicker()
             
             }, onError: nil, onCompleted: nil).disposed(by: disposeBag)
-        
        
     }
     
     
     @IBAction func searchButtonWasPressed(_ sender: Any) {
-     
         listener?.didTapSearchButton()
-        
     }
     
     func present(viewController: ViewControllable) {
@@ -109,7 +104,4 @@ final class ArticleViewController: UIViewController,ArticlePresentable, ArticleV
     
 }
 
-extension ArticleViewController:SearchViewControllable{
-    
-    
-}
+extension ArticleViewController:SearchViewControllable{}

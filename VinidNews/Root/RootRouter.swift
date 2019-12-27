@@ -25,7 +25,6 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     private let articleBuilder:ArticleBuildable
     private var articleRouting:ViewableRouting?
     
-    
     @available(iOS 13.0, *)
     init(interactor: RootInteractable,
          viewController: RootViewControllable,

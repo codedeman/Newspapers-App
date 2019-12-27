@@ -36,13 +36,8 @@ final class RootViewController: UINavigationController, RootPresentable, RootVie
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         
-        
-        
-        
-//        DataService.instance.getArtice(url: url) { (news) in
-//            
-//            print(news)
-//        }
+       
+
     }
     
     

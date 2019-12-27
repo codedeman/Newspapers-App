@@ -14,7 +14,7 @@ protocol SearchDependency: Dependency {
 }
 
 final class SearchComponent: Component<SearchDependency> {
-    
+    let searchView = SearchViewController()
     fileprivate var loggedInViewController: SearchViewControllable {
         return dependency.searchViewController
     }
@@ -27,6 +27,7 @@ protocol SearchBuildable: Buildable {
     func build(withListener listener: SearchListener) -> SearchRouting
 }
 
+@available(iOS 13.0, *)
 final class SearchBuilder: Builder<SearchDependency>, SearchBuildable {
 
     override init(dependency: SearchDependency) {
@@ -34,13 +35,38 @@ final class SearchBuilder: Builder<SearchDependency>, SearchBuildable {
     }
     
 
+    @available(iOS 13.0, *)
     func build(withListener listener: SearchListener) -> SearchRouting {
-        _ = SearchComponent(dependency: dependency)
+        let component = SearchComponent(dependency: dependency)
         guard  let searchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "searchView") as? SearchViewController else {fatalError("error")}
         searchViewController.modalPresentationStyle = .fullScreen
         
         let interactor = SearchInteractor(presenter: searchViewController)
         interactor.listener = listener
-        return SearchRouter(interactor: interactor, viewController: searchViewController)
+        let articleBuilder = ArticleBuilder(dependency: component)
+        
+        let searchBuilder = SearchBuilder(dependency: component)
+
+        return SearchRouter(interactor: interactor, viewController: searchViewController, articleBuilder: articleBuilder, searchBuilder: searchBuilder)
     }
 }
+
+extension SearchComponent:ArticleDependency{
+    var searchViewController: SearchViewControllable {
+        return searchView
+    }
+    
+    
+    
+
+
+}
+
+extension SearchComponent:SearchDependency{
+//    var searchViewController: SearchViewControllable {
+//        return searchViewController
+//    }
+
+}
+
+

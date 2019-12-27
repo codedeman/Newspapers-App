@@ -52,9 +52,7 @@
 		8DCA580C23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA580B23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift */; };
 		8DCA580F23B3662500F2F789 /* LoadMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCA580D23B3662500F2F789 /* LoadMoreCell.swift */; };
 		8DCA581023B3662500F2F789 /* LoadMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA580E23B3662500F2F789 /* LoadMoreCell.xib */; };
-		8DE893BF23AFCDF400AAF5A1 /* NewsStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE893BE23AFCDF400AAF5A1 /* NewsStream.swift */; };
 		8DE893C223B06CAD00AAF5A1 /* RootComponent+Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE893C123B06CAD00AAF5A1 /* RootComponent+Article.swift */; };
-		8DE893C423B07AFA00AAF5A1 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE893C323B07AFA00AAF5A1 /* Dependency.swift */; };
 		8DE893C623B07C2A00AAF5A1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE893C523B07C2A00AAF5A1 /* DataService.swift */; };
 		8DE893C923B08A0400AAF5A1 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE893C823B08A0400AAF5A1 /* AppComponent.swift */; };
 /* End PBXBuildFile section */
@@ -127,11 +125,9 @@
 		8DCA580423B3107400F2F789 /* DatePickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerInteractor.swift; sourceTree = "<group>"; };
 		8DCA580523B3107400F2F789 /* DatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
 		8DCA580B23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleComponent+DatePickerDependency.swift"; sourceTree = "<group>"; };
-		8DCA580D23B3662500F2F789 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadMoreCell.swift; path = Cell/LoadMoreCell.swift; sourceTree = "<group>"; };
-		8DCA580E23B3662500F2F789 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadMoreCell.xib; path = Cell/LoadMoreCell.xib; sourceTree = "<group>"; };
-		8DE893BE23AFCDF400AAF5A1 /* NewsStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStream.swift; sourceTree = "<group>"; };
+		8DCA580D23B3662500F2F789 /* LoadMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCell.swift; sourceTree = "<group>"; };
+		8DCA580E23B3662500F2F789 /* LoadMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreCell.xib; sourceTree = "<group>"; };
 		8DE893C123B06CAD00AAF5A1 /* RootComponent+Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+Article.swift"; sourceTree = "<group>"; };
-		8DE893C323B07AFA00AAF5A1 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 		8DE893C523B07C2A00AAF5A1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8DE893C823B08A0400AAF5A1 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		B58D5931D377928E2BD426EB /* Pods-VinidNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VinidNews.release.xcconfig"; path = "Target Support Files/Pods-VinidNews/Pods-VinidNews.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,9 +230,7 @@
 				18968AF9238BCA21008B5151 /* Assets.xcassets */,
 				18968AFB238BCA21008B5151 /* LaunchScreen.storyboard */,
 				18968AFE238BCA21008B5151 /* Info.plist */,
-				8DE893C323B07AFA00AAF5A1 /* Dependency.swift */,
-				8DCA580D23B3662500F2F789 /* LoadMoreCell.swift */,
-				8DCA580E23B3662500F2F789 /* LoadMoreCell.xib */,
+				8DCA581123B4808C00F2F789 /* LoadMore */,
 			);
 			path = VinidNews;
 			sourceTree = "<group>";
@@ -263,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				18FE1D2D238E16C400540A56 /* NewsModel.swift */,
-				8DE893BE23AFCDF400AAF5A1 /* NewsStream.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +338,15 @@
 				8DCA580523B3107400F2F789 /* DatePickerViewController.xib */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		8DCA581123B4808C00F2F789 /* LoadMore */ = {
+			isa = PBXGroup;
+			children = (
+				8DCA580D23B3662500F2F789 /* LoadMoreCell.swift */,
+				8DCA580E23B3662500F2F789 /* LoadMoreCell.xib */,
+			);
+			path = LoadMore;
 			sourceTree = "<group>";
 		};
 		8DE893C023AFD4DB00AAF5A1 /* Api */ = {
@@ -539,12 +541,10 @@
 				8D2C1DDC23ADB3AA005F67A3 /* RootInteractor.swift in Sources */,
 				8DAEF82623B1BA9C002D3698 /* SearchBuilder.swift in Sources */,
 				8DCA580723B3107400F2F789 /* DatePickerViewController.swift in Sources */,
-				8DE893C423B07AFA00AAF5A1 /* Dependency.swift in Sources */,
 				8DCA57F423B2592900F2F789 /* DetailRouter.swift in Sources */,
 				8DCA580923B3107400F2F789 /* DatePickerInteractor.swift in Sources */,
 				8D2C1DD923ADB3AA005F67A3 /* RootRouter.swift in Sources */,
 				18256782238F884500BABC47 /* NewFeedCell.swift in Sources */,
-				8DE893BF23AFCDF400AAF5A1 /* NewsStream.swift in Sources */,
 				8DCA580C23B312CC00F2F789 /* ArticleComponent+DatePickerDependency.swift in Sources */,
 				8DE893C623B07C2A00AAF5A1 /* DataService.swift in Sources */,
 				18C9CAD72393F1C600AED9BE /* CheckConnection.swift in Sources */,

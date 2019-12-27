@@ -10,20 +10,12 @@ import RIBs
 
 protocol ArticleDependency: Dependency {
     
-//    var articleViewController:ArticleViewControllable {get}
 }
 
 final class ArticleComponent: Component<ArticleDependency> {
     
     let articleView = ArticleViewController()
-//    let articleController:ArticleViewController! = nil
-    
-//    override init(dependency: Dependency) {
-//        super.init(dependency: dependency)
-//        
-//    }
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
 
 // MARK: - Builder

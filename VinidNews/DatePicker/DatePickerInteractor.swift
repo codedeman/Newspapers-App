@@ -28,9 +28,6 @@ protocol DatePickerListener: class {
 
 final class DatePickerInteractor: PresentableInteractor<DatePickerPresentable>, DatePickerInteractable, DatePickerPresentableListener {
     
- 
-    
-    
 
     weak var router: DatePickerRouting?
     weak var listener: DatePickerListener?

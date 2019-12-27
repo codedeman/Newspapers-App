@@ -18,6 +18,7 @@ protocol ArticleViewControllable: ViewControllable {
     func present(viewController: ViewControllable)
     func dismiss(viewController: ViewControllable)
     func  push(viewController: ViewControllable)
+
 }
 
 @available(iOS 13.0, *)
@@ -65,7 +66,7 @@ final class ArticleRouter: ViewableRouter<ArticleInteractable, ArticleViewContro
     func routeToSearch() {
         let router = searchBuilder.build(withListener: interactor)
               attachChild(router)
-              viewController.present(viewController: router.viewControllable)
+        viewController.push(viewController: router.viewControllable)
     }
     
 
